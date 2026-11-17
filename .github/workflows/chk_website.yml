@@ -2,8 +2,8 @@ name: Check Website
 
 # 스케줄 설정: 5분마다
 on:
-  schedule:
-    - cron: "*/5 * * * *"    
+  repository_dispatch:
+    types: [chkWebsite-trigger1] # 외부에서 보낼 신호의 '이름'입니다. 마음대로 정해도 됩니다.
   workflow_dispatch:          # 수동 실행 가능
 
 jobs:
