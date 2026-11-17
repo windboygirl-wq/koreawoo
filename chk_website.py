@@ -23,7 +23,11 @@ def send_telegram(message: str):
 def check_server() -> str:
     """서버 상태 확인 (HTTP status code 반환)"""
     try:
-        response = requests.get(URL, timeout=CHECK_TIMEOUT)
+        import requests
+        headers = {
+            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'
+        }
+        response = requests.get('https://example.com', headers=headers, timeout=10)
         return str(response.status_code)
     except requests.RequestException:
         return "NO RESPONSE"
