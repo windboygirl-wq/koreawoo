@@ -27,7 +27,7 @@ def check_server() -> str:
         headers = {
             'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'
         }
-        response = requests.get('https://example.com', headers=headers, timeout=10)
+        response = requests.get(URL, headers=headers, timeout=10)
         return str(response.status_code)
     except requests.RequestException:
         return "NO RESPONSE"
